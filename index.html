@@ -978,6 +978,7 @@
                          <h3 class="text-xl font-bold text-gray-800 mb-4 dynapuff">Actions & Export</h3>
                         <div class="flex flex-wrap gap-3">
                             <button id="scoring-save-progress" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg shadow transition">Save Progress</button>
+                            <button id="scoring-export-member" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow transition">Export My Scores</button>
                             <button id="scoring-post-final" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-lg shadow transition">Post Final Scores</button>
                             <button id="scoring-export-csv" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg shadow transition admin-only" style="display: none;">Export Master CSV</button>
                             <button id="scoring-clear" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg shadow transition">Clear Current Form</button>
@@ -1071,25 +1072,9 @@
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                 Back to Portal Dashboard
             </button>
-             <div class="text-center mb-6">
+             <div class="text-center mb-10">
               <h1 class="text-3xl md:text-4xl font-bold text-purple-700 mb-2 dynapuff">Master Scoring Tracker</h1>
-              <p class="text-gray-600 arial-nova">View all final scores submitted by the committee. You can also backup or restore all scoring data here.</p>
-              <p id="tracker-status" class="mt-2 font-semibold h-6"></p>
              </div>
-             <!-- Admin Data Actions -->
-            <div class="bg-white p-4 rounded-xl shadow-md mb-6 flex flex-wrap gap-4 justify-center items-center">
-                <h3 class="text-lg font-bold text-gray-800 dynapuff w-full text-center md:w-auto">Data Management</h3>
-                <button onclick="backupData()" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow transition">
-                    Backup All Scores
-                </button>
-                <div class="relative">
-                    <button onclick="triggerRestore()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg shadow transition">
-                        Restore from Backup
-                    </button>
-                    <input type="file" id="restore-file-input" class="hidden" accept=".json" onchange="restoreData(event)">
-                </div>
-                <p class="text-xs text-gray-500 w-full text-center mt-2">Restoring will overwrite all current scoring data. Use with caution.</p>
-            </div>
              <div id="master-tracker-view" class="bg-white p-6 rounded-2xl shadow-xl"></div>
          </div>
     </div>
@@ -1173,7 +1158,7 @@
       'thornhill': {
           name: 'Thornhill & Upper Cwmbran',
           formUrl: 'https://forms.office.com/e/n0jg5xdAwS',
-          postcodes: ["NP45DQ","NP441AB","NP441AY","NP441AZ","NP441BA","NP441BE","NP441BG","NP441BH","NP441BJ","NP441BL","NP441BN","NP441BP","NP441BS","NP441BT","NP441BU","NP441BW","NP441BX","NP441BY","NP441BZ","NP441DA","NP441DB","NP441DE","NP441DF","NP441DG","NP441DH","NP441DJ","NP441DL","NP441DN","NP441DP","NP441DQ","NP441DR","NP441DS","NP441DT","NP441DU","NP441DW","NP441DX","NP441DY","NP441DZ","NP441EA","NP441EB","NP441ED","NP441EE","NP441EF","NP441EG","NP441EH","NP441EL","NP441EN","NP441EP","NP441EQ","NP441ER","NP441ES","NP441ET","NP441EU","NP441EW","NP441EX","NP441EY","NP441EZ","NP441HA","NP441HB","NP441HD","NP441HE","NP441HF","NP441HG","NP441HH","NP441HJ","NP441HL","NP441HN","NP441HP","NP441HQ","NP441HR","NP441HS","NP441HT","NP441HU","NP441HW","NP441HX","NP441HY","NP441HZ","NP441JA","NP441JB","NP441JD","NP441JE","NP441JF","NP441JG","NP441JH","NP441JJ","NP441JL","NP441JN","NP441JP","NP441JR","NP441JS","NP441JT","NP441JU","NP441JX","NP441LA","NP441LB","NP441LD","NP441LE","NP441LG","NP441LH","NP441LJ","NP441LL","NP441LN","NP441LP","NP441LQ","NP441LR","NP441LS","NP441LT","NP441LU","NP441LW","NP441LX","NP441NA","NP441NB","NP441ND","NP441NE","NP441NF","NP441NG","NP441NH","NP441NJ","NP441NL","NP441NN","NP441NP","NP441NQ","NP441NR","NP441NS","NP441NT","NP441NU","NP441NW","NP441PA","NP441PB","NP441PD","NP441PE","NP441PF","NP441PG","NP441PH","NP441PJ","NP441PL","NP441PN","NP441PP","NP441PQ","NP441PR","NP441PS","NP441PT","NP441PU","NP441PW","NP441PX","NP441PY","NP441PZ","NP441QA","NP441QB","NP441QD","NP441QE","NP441QF","NP441QG","NP441QH","NP441QJ","NP441QL","NP441QP","NP441QQ","NP441QR","NP441QS","NP441QT","NP441QU","NP441QW","NP441QX","NP441QY","NP441QZ","NP441RA","NP441RB","NP441RD","NP441RE","NP441RF","NP441RG","NP441RH","NP441RJ","NP441RL","NP441RN","NP441RP","NP441RQ","NP441RR","NP441RS","NP441RT","NP441RU","NP441RW","NP441RX","NP441RY","NP441RZ","NP441SA","NP441SB","NP441SD","NP441SE","NP441SF","NP441SG","NP441SH","NP441SJ","NP441SL","NP441SN","NP441SP","NP441SQ","NP441SR","NP441SS","NP441ST","NP441SU","NP441SW","NP441SX","NP441SY","NP441SZ","NP441TA","NP441TB","NP441TD","NP441TE","NP441TF","NP441TG","NP441TH","NP441TJ","NP441TL","NP441TN","NP441TP","NP441TQ","NP441TR","NP441TS","NP441TT","NP441TU","NP441TW","NP441TX","NP441TY","NP441UA","NP441WA","NP441WB","NP442EB","NP442RX","NP442SB","NP444TQ","NP445AA","NP445AB","NP445AD","NP445AE","NP445AF","NP445AG","NP445AH","NP445AJ","NP445AL","NP445AN","NP445AP","NP445AQ","NP445AR","NP445AS","NP445AT","NP445AU","NP445AW","NP445AX","NP445AY","NP445AZ","NP445BA","NP445BB","NP445BD","NP445BE","NP445BF","NP445BG","NP445BH","NP445BJ","NP445BL","NP445BN","NP445BP","NP445BQ","NP445BS","NP445BT","NP445BU","NP445BW","NP445BX","NP445BY","NP445BZ","NP445DA","NP445DB","NP445DD","NP445DE","NP445DF","NP445DG","NP445DH","NP445DJ","NP445DL","NP445DN","NP445DP","NP445DQ","NP445DR","NP445DS","NP445DT","NP445DU","NP445DW","NP445DX","NP445DY","NP445DZ","NP445EA","NP445EB","NP445ED","NP445EE","NP445EF","NP445EG","NP445EH","NP445EJ","NP445EL","NP445EN","NP445EP","NP445EQ","NP445ER","NP445ES","NP445ET","NP445EU","NP445EW","NP445EX","NP445EY","NP445EZ","NP445FA","NP445FB","NP445FD","NP445FE","NP445FF","NP445FG","NP445FH","NP445FJ","NP445FL","NP445FN","NP445FP","NP445FQ","NP445FR","NP445FS","NP445FT","NP445FU","NP445HA","NP445HB","NP445HD","NP445HE","NP445HF","NP445HG","NP445HH","NP445HJ","NP445HL","NP445HN","NP445HP","NP445HQ","NP445HR","NP445HS","NP445HT","NP445HU","NP445HW","NP445HX","NP445HY","NP445HZ","NP445JA","NP445JB","NP445JD","NP445JE","NP445JF","NP445JG","NP445JH","NP445JJ","NP445JL","NP445JN","NP445JP","NP445JQ","NP445JR","NP445JS","NP445JT","NP445JU","NP445JW","NP445JX","NP445JY","NP445JZ","NP445LA","NP445LB","NP445LD","NP445LE","NP445LF","NP445LG","NP445LH","NP445LJ","NP445LL","NP445LN","NP445LP","NP445LQ","NP445LR","NP445LS","NP445LT","NP445LU","NP445LW","NP445LX","NP445LY","NP445LZ","NP445NA","NP445NB","NP445ND","NP445NE","NP445NF","NP445NG","NP445NH","NP445NJ","NP445NL","NP445NN","NP445NP","NP445NQ","NP445NR","NP445NS","NP445NT","NP445NU","NP445NW","NP445NX","NP445NY","NP445NZ","NP445PA","NP445PB","NP445PD","NP445PE","NP445PF","NP445PG","NP445PH","NP445PJ","NP445PL","NP445PN","NP445PP","NP445PQ","NP445PR","NP445PS","NP445PT","NP445PU","NP445PW","NP445PX","NP445PY","NP445PZ","NP445QA","NP445QB","NP445QD","NP445QE","NP445QF","NP445QG","NP445QH","NP445QJ","NP445QL","NP445QN","NP445QP","NP445QQ","NP445QR","NP445QS","NP445QT","NP445QU","NP445QW","NP445QX","NP445QY","NP445QZ","NP445RA","NP445RB","NP445RD","NP445RE","NP445RF","NP445RG","NP445RH","NP445RJ","NP445RL","NP445RN","NP445RP","NP445RQ","NP445RR","NP445RS","NP445RT","NP445RU","NP445RW","NP445RX","NP445RY","NP445SA","NP445SB","NP445SD","NP445SE","NP445SF","NP445SG","NP445SH","NP445SJ","NP445SL","NP445SN","NP445SP","NP445SQ","NP445SR","NP445SS","NP445ST","NP445SU","NP445SW","NP445SX","NP445SY","NP445TA","NP445TB","NP445TD","NP445TE","NP445TF","NP445TG","NP445TH","NP445TJ","NP445TL","NP445TN","NP445TP","NP445TQ","NP445TR","NP445TS","NP445TT","NP445TU","NP445TW","NP445TX","NP445TY","NP445TZ","NP445UA","NP445UB","NP445UD","NP445UE","NP445UF","NP445UG","NP445UH","NP445UJ","NP445UL","NP445UN","NP445UP","NP445UQ","NP445UR","NP445US","NP445UT","NP445UU","NP445UW","NP445UX","NP445UY"]
+          postcodes: ["NP45DQ","NP441AB","NP441AY","NP441AZ","NP441BA","NP441BE","NP441BG","NP441BH","NP441BJ","NP441BL","NP441BN","NP441BP","NP441BS","NP441BT","NP441BU","NP441BW","NP441BX","NP441BY","NP441BZ","NP441DA","NP441DB","NP441DE","NP441DF","NP441DG","NP441DH","NP441DJ","NP441DL","NP441DN","NP441DP","NP441DQ","NP441DR","NP441DS","NP441DT","NP441DU","NP441DW","NP441DX","NP441DY","NP441DZ","NP441EA","NP441EB","NP441ED","NP441EE","NP441EF","NP441EG","NP441EH","NP441EL","NP441EN","NP441EP","NP441EQ","NP441ER","NP441ES","NP441ET","NP441EU","NP441EW","NP441EX","NP441EY","NP441EZ","NP441HA","NP441HB","NP441HD","NP441HE","NP441HF","NP441HG","NP441HH","NP441HJ","NP441HL","NP441HN","NP441HP","NP441HQ","NP441HR","NP441HS","NP441HT","NP441HU","NP441HW","NP441HX","NP441HY","NP441HZ","NP441JA","NP441JB","NP441JD","NP441JE","NP441JF","NP441JG","NP441JH","NP441JJ","NP441JL","NP441JN","NP441JP","NP441JR","NP441JS","NP441JT","NP441JU","NP441JX","NP441LA","NP441LB","NP441LD","NP441LE","NP441LG","NP441LH","NP441LJ","NP441LL","NP441LN","NP441LP","NP441LQ","NP441LR","NP441LS","NP441LT","NP441LU","NP441LW","NP441LX","NP441NA","NP441NB","NP441ND","NP441NE","NP441NF","NP441NG","NP441NH","NP441NJ","NP441NL","NP441NN","NP441NP","NP441NQ","NP441NR","NP441NS","NP441NT","NP441NU","NP441NW","NP441PA","NP441PB","NP441PD","NP441PE","NP441PF","NP441PG","NP441PH","NP441PJ","NP441PL","NP441PN","NP441PP","NP441PQ","NP441PR","NP441PS","NP441PT","NP441PU","NP441PW","NP441PX","NP441PY","NP441PZ","NP441QA","NP441QB","NP441QD","NP441QE","NP441QF","NP441QG","NP441QH","NP441QJ","NP441QL","NP441QP","NP441QQ","NP441QR","NP441QS","NP441QT","NP441QU","NP441QW","NP441QX","NP441QY","NP441QZ","NP441RA","NP441RB","NP441RD","NP441RE","NP441RF","NP441RG","NP441RH","NP441RJ","NP441RL","NP441RN","NP441RP","NP441RQ","NP441RR","NP441RS","NP441RT","NP441RU","NP441RW","NP441RX","NP441RY","NP441RZ","NP441SA","NP441SB","NP441SD","NP441SE","NP441SF","NP441SG","NP441SH","NP441SJ","NP441SL","NP441SN","NP441SP","NP441SQ","NP441SR","NP441SS","NP441ST","NP441SU","NP441SW","NP441SX","NP441SY","NP441SZ","NP441TA","NP441TB","NP441TD","NP441TE","NP441TF","NP441TG","NP441TH","NP441TJ","NP441TL","NP441TN","NP441TP","NP441TQ","NP441TR","NP441TS","NP441TT","NP441TU","NP441TW","NP441TX","NP441TY","NP441UA","NP441WB","NP442EB","NP442RX","NP442SB","NP444TQ","NP445AA","NP445AB","NP445AD","NP445AE","NP445AF","NP445AG","NP445AH","NP445AJ","NP445AL","NP445AN","NP445AP","NP445AQ","NP445AR","NP445AS","NP445AT","NP445AU","NP445AW","NP445AX","NP445AY","NP445AZ","NP445BA","NP445BB","NP445BD","NP445BE","NP445BF","NP445BG","NP445BH","NP445BJ","NP445BL","NP445BN","NP445BP","NP445BQ","NP445BS","NP445BT","NP445BU","NP445BW","NP445BX","NP445BY","NP445BZ","NP445DA","NP445DB","NP445DD","NP445DE","NP445DF","NP445DG","NP445DH","NP445DJ","NP445DL","NP445DN","NP445DP","NP445DQ","NP445DR","NP445DS","NP445DT","NP445DU","NP445DW","NP445DX","NP445DY","NP445DZ","NP445EA","NP445EB","NP445ED","NP445EE","NP445EF","NP445EG","NP445EH","NP445EJ","NP445EL","NP445EN","NP445EP","NP445EQ","NP445ER","NP445ES","NP445ET","NP445EU","NP445EW","NP445EX","NP445EY","NP445EZ","NP445FA","NP445FB","NP445FD","NP445FE","NP445FF","NP445FG","NP445FH","NP445FJ","NP445FL","NP445FN","NP445FP","NP445FQ","NP445FR","NP445FS","NP445FT","NP445FU","NP445HA","NP445HB","NP445HD","NP445HE","NP445HF","NP445HG","NP445HH","NP445HJ","NP445HL","NP445HN","NP445HP","NP445HQ","NP445HR","NP445HS","NP445HT","NP445HU","NP445HW","NP445HX","NP445HY","NP445HZ","NP445JA","NP445JB","NP445JD","NP445JE","NP445JF","NP445JG","NP445JH","NP445JJ","NP445JL","NP445JN","NP445JP","NP445JQ","NP445JR","NP445JS","NP445JT","NP445JU","NP445JW","NP445JX","NP445JY","NP445JZ","NP445LA","NP445LB","NP445LD","NP445LE","NP445LF","NP445LG","NP445LH","NP445LJ","NP445LL","NP445LN","NP445LP","NP445LQ","NP445LR","NP445LS","NP445LT","NP445LU","NP445LW","NP445LX","NP445LY","NP445LZ","NP445NA","NP445NB","NP445ND","NP445NE","NP445NF","NP445NG","NP445NH","NP445NJ","NP445NL","NP445NN","NP445NP","NP445NQ","NP445NR","NP445NS","NP445NT","NP445NU","NP445NW","NP445NX","NP445NY","NP445NZ","NP445PA","NP445PB","NP445PD","NP445PE","NP445PF","NP445PG","NP445PH","NP445PJ","NP445PL","NP445PN","NP445PP","NP445PQ","NP445PR","NP445PS","NP445PT","NP445PU","NP445PW","NP445PX","NP445PY","NP445PZ","NP445QA","NP445QB","NP445QD","NP445QE","NP445QF","NP445QG","NP445QH","NP445QJ","NP445QL","NP445QN","NP445QP","NP445QQ","NP445QR","NP445QS","NP445QT","NP445QU","NP445QW","NP445QX","NP445QY","NP445QZ","NP445RA","NP445RB","NP445RD","NP445RE","NP445RF","NP445RG","NP445RH","NP445RJ","NP445RL","NP445RN","NP445RP","NP445RQ","NP445RR","NP445RS","NP445RT","NP445RU","NP445RW","NP445RX","NP445RY","NP445SA","NP445SB","NP445SD","NP445SE","NP445SF","NP445SG","NP445SH","NP445SJ","NP445SL","NP445SN","NP445SP","NP445SQ","NP445SR","NP445SS","NP445ST","NP445SU","NP445SW","NP445SX","NP445SY","NP445TA","NP445TB","NP445TD","NP445TE","NP445TF","NP445TG","NP445TH","NP445TJ","NP445TL","NP445TN","NP445TP","NP445TQ","NP445TR","NP445TS","NP445TT","NP445TU","NP445TW","NP445TX","NP445TY","NP445TZ","NP445UA","NP445UB","NP445UD","NP445UE","NP445UF","NP445UG","NP445UH","NP445UJ","NP445UL","NP445UN","NP445UP","NP445UQ","NP445UR","NP445US","NP445UT","NP445UU","NP445UW","NP445UX","NP445UY"]
       },
       'trevethin': {
           name: 'Trevethin, Penygarn & St. Cadocs',
@@ -1727,42 +1712,30 @@
     const SCORING_DATA = {
         APPLICATIONS: [
             { ref: "PBBLN001", applicant: "Blaenavon Blues FC", area: "Blaenavon", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBBLN001.pdf" },
-            { ref: "PBBLN002", applicant: "Blaenavon Camera Club", area: "Blaenavon", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBBLN002.pdf" },
             { ref: "PBBLN003", applicant: "Blaenavon Community Museum", area: "Blaenavon", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBBLN003.pdf" },
             { ref: "PBBLN004", applicant: "Blaenavon Male Voice Choir", area: "Blaenavon", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBBLN004.pdf" },
             { ref: "PBBLN005", applicant: "Blaenavon Mini and Juniors RFC", area: "Blaenavon", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBBLN005.pdf" },
             { ref: "PBBLN006", applicant: "Blaenavon Netball", area: "Blaenavon", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBBLN006.pdf" },
             { ref: "PBBLN007", applicant: "Blaenavon Town Band", area: "Blaenavon", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBBLN007.pdf" },
             { ref: "PBBLN008", applicant: "Blaenavon Youth Strategy", area: "Blaenavon", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBBLN008.pdf" },
-            { ref: "PBBLN009", applicant: "Garnsychan Partnership", area: "Blaenavon", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBBLN009.pdf" },
             { ref: "PBBLN010", applicant: "Horticultural Group - Blaenavon Heritage School", area: "Blaenavon", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBBLN010.pdf" },
-            { ref: "PBBLN011", applicant: "Little Oaks Retreat", area: "Blaenavon", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBBLN011.pdf" },
             { ref: "PBBLN012", applicant: "Torfaen Youth Service", area: "Blaenavon", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBBLN012.pdf" },
             { ref: "PBBLN013", applicant: "Welsh Language Conversation", area: "Blaenavon", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBBLN013.pdf" },
             { ref: "PBTUP001", applicant: "Able", area: "Thornhill & Upper Cwmbran", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBTUP001.pdf" },
             { ref: "PBTUP002", applicant: "Blaenbran Community Woodland", area: "Thornhill & Upper Cwmbran", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBTUP002.pdf" },
-            { ref: "PBTUP003", applicant: "Garden of Hope - RecoverED", area: "Thornhill & Upper Cwmbran", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBTUP003.pdf" },
             { ref: "PBTUP004", applicant: "Graffiti Tutor", area: "Thornhill & Upper Cwmbran", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBTUP004.pdf" },
             { ref: "PBTUP005", applicant: "HIP HOP 12", area: "Thornhill & Upper Cwmbran", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBTUP005.pdf" },
-            { ref: "PBTUP006", applicant: "Mindful Munch Café LLP", area: "Thornhill & Upper Cwmbran", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBTUP006.pdf" },
             { ref: "PBTUP007", applicant: "MOVE Against Cancer", area: "Thornhill & Upper Cwmbran", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBTUP007.pdf" },
             { ref: "PBTUP008", applicant: "Pontnewydd Male Voice Choir", area: "Thornhill & Upper Cwmbran", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBTUP008.pdf" },
             { ref: "PBTUP009", applicant: "Thornhill Community Centre - Messy Family Play (1)", area: "Thornhill & Upper Cwmbran", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBTUP009.pdf" },
             { ref: "PBTUP010", applicant: "Thornhill Community Centre - Play and Respite (2)", area: "Thornhill & Upper Cwmbran", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBTUP010.pdf" },
-            { ref: "PBTPS001", applicant: "Age Connects", area: "Trevethin, Penygarn & St. Cadocs", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBTPS001.pdf" },
             { ref: "PBTPS002", applicant: "CBF - MUGA", area: "Trevethin, Penygarn & St. Cadocs", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBTPS002.pdf" },
             { ref: "PBTPS003", applicant: "Penygarn & Trevethin FC", area: "Trevethin, Penygarn & St. Cadocs", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBTPS003.pdf" },
-            { ref: "PBTPS004", applicant: "Pleasant Court", area: "Trevethin, Penygarn & St. Cadocs", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBTPS004.pdf" },
-            { ref: "PBTPS005", applicant: "Studio 77", area: "Trevethin, Penygarn & St. Cadocs", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBTPS005.pdf" },
             { ref: "PBTPS006", applicant: "TIDY BUTT", area: "Trevethin, Penygarn & St. Cadocs", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBTPS006.pdf" },
-            { ref: "PBTPS007", applicant: "Torfaen Museum Trust", area: "Trevethin, Penygarn & St. Cadocs", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBTPS007.pdf" },
             { ref: "PBTPS008", applicant: "Torfaen Young Parents Group", area: "Trevethin, Penygarn & St. Cadocs", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBTPS008.pdf" },
             { ref: "PBTPS009", applicant: "Trevethin Community Centre", area: "Trevethin, Penygarn & St. Cadocs", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBTPS009.pdf" },
             { ref: "PBCRS001", applicant: "Abersychan Comprehensive School", area: "Cross-Area Application", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBCRS001.pdf" },
-            { ref: "PBCRS002", applicant: "Giving Hope Torfaen", area: "Cross-Area Application", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBCRS002.pdf" },
-            { ref: "PBCRS003", applicant: "Menterorar Taking Pride In Young People", area: "Cross-Area Application", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBCRS003.pdf" },
-            { ref: "PBCRS004", applicant: "Torfaen Talks CIC", area: "Cross-Area Application", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBCRS004.pdf" },
-            { ref: "PBCRS005", applicant: "Wrestle Cymru", area: "Cross-Area Application", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBCRS005.pdf" }
+            { ref: "PBCRS003", applicant: "Menterorar Taking Pride In Young People", area: "Cross-Area Application", pdfUrl: "https://cdn.jsdelivr.net/gh/danwtva-source/applications-test@main/PBCRS003.pdf" }
         ],
         COMMITTEE_MEMBERS: [
             { name: "Louise White", area: "Blaenavon" },
@@ -1874,6 +1847,7 @@
         document.getElementById('scoring-save-progress').addEventListener('click', () => saveProgress(true));
         document.getElementById('scoring-post-final').addEventListener('click', postFinalScores);
         document.getElementById('scoring-export-csv').addEventListener('click', exportMasterTrackerToCSV);
+        document.getElementById('scoring-export-member').addEventListener('click', exportMemberScoresToCSV);
         document.getElementById('scoring-clear').addEventListener('click', clearCurrentForm);
 
         document.getElementById('view-pdf-button').addEventListener('click', openPdfViewerForCurrentApp);
@@ -2151,24 +2125,18 @@
     
     // Admin Master Tracker View
     function deleteScore(ref, scorerName) {
-        // This is an admin-only feature. A proper confirmation would use a custom modal.
-        // For simplicity and immediate functionality, we proceed directly.
-        
-        // 1. Delete from Master Tracker
-        const masterTracker = JSON.parse(localStorage.getItem('scoring_masterTracker') || '[]');
-        const newMasterTracker = masterTracker.filter(entry => !(entry.ref === ref && entry.scorer === scorerName));
-        localStorage.setItem('scoring_masterTracker', JSON.stringify(newMasterTracker));
+        if (confirm(`Are you sure you want to PERMANENTLY delete the score for application ${ref} submitted by '${scorerName}'? This action cannot be undone.`)) {
+            // 1. Delete from Master Tracker
+            const masterTracker = JSON.parse(localStorage.getItem('scoring_masterTracker') || '[]');
+            const newMasterTracker = masterTracker.filter(entry => !(entry.ref === ref && entry.scorer === scorerName));
+            localStorage.setItem('scoring_masterTracker', JSON.stringify(newMasterTracker));
 
-        // 2. Delete from individual's storage
-        const storageKey = `scoring_${scorerName.replace(/\s+/g, '_')}_${ref}`;
-        localStorage.removeItem(storageKey);
+            // 2. Delete from individual's storage
+            const storageKey = `scoring_${scorerName.replace(/\s+/g, '_')}_${ref}`;
+            localStorage.removeItem(storageKey);
 
-        // 3. Re-render the views
-        showTrackerStatus(`Score for ${ref} by ${scorerName} has been reset.`);
-        renderMasterTrackerView();
-        
-        if(document.getElementById('page-admin-dashboard').style.display === 'block') {
-            renderAdminDashboard(document.getElementById('admin-area-filter').value);
+            // 3. Re-render the view
+            renderMasterTrackerView();
         }
     }
 
@@ -2187,7 +2155,7 @@
 
         const masterTracker = JSON.parse(localStorage.getItem('scoring_masterTracker') || '[]');
         if (masterTracker.length === 0) {
-            container.innerHTML = `<p class="text-center text-gray-500 py-8">The Master Tracker is currently empty. No final scores have been posted.</p>`;
+            container.innerHTML = `<p class="text-center text-gray-500">The Master Tracker is currently empty.</p>`;
             return;
         }
         
@@ -2526,6 +2494,64 @@
         localStorage.setItem('scoring_masterTracker', JSON.stringify(masterTracker));
     }
 
+    function exportMemberScoresToCSV() {
+        if (!currentMember) {
+            alert('Please select your name from the "Committee Member" dropdown first.');
+            return;
+        }
+
+        const assignedApps = getFilteredAppsForMember(currentMember);
+        if (assignedApps.length === 0) {
+            alert('No applications are assigned to you for export.');
+            return;
+        }
+
+        const headers = [ 'Reference', 'Applicant', 'Area', 'Status', 'Total Score' ];
+        SCORING_DATA.CRITERIA_TEMPLATE.forEach(c => {
+            headers.push(`${c.name} Score`, `${c.name} Notes`);
+        });
+
+        const csvRows = [headers.join(',')];
+
+        assignedApps.forEach(app => {
+            const storageKey = `scoring_${currentMember.name.replace(/\s+/g, '_')}_${app.ref}`;
+            const savedData = JSON.parse(localStorage.getItem(storageKey));
+
+            let row;
+            if (savedData) {
+                const totalScore = Math.round(savedData.criteria.reduce((acc, c) => acc + ((c.score || 0) / 3) * c.weight, 0));
+                row = [
+                    app.ref,
+                    `"${app.applicant}"`,
+                    `"${app.area}"`,
+                    savedData.isFinal ? 'Final' : 'In Progress',
+                    totalScore
+                ];
+                SCORING_DATA.CRITERIA_TEMPLATE.forEach(c => {
+                    const scoreData = savedData.criteria.find(s => s.id === c.id);
+                    row.push(scoreData ? scoreData.score : '0');
+                    row.push(scoreData ? `"${(scoreData.notes || '').replace(/"/g, '""')}"` : '""');
+                });
+            } else {
+                row = [`"${app.ref}"`, `"${app.applicant}"`, `"${app.area}"`, 'Pending', 'N/A'];
+                SCORING_DATA.CRITERIA_TEMPLATE.forEach(() => {
+                    row.push('', '');
+                });
+            }
+            csvRows.push(row.join(','));
+        });
+
+        const csvContent = "data:text/csv;charset=utf-8," + csvRows.join('\n');
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        const fileName = `My_PB_Scores_${currentMember.name.replace(/\s+/g, '_')}.csv`;
+        link.setAttribute("download", fileName);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
     function exportMasterTrackerToCSV() {
         const masterTracker = JSON.parse(localStorage.getItem('scoring_masterTracker') || '[]');
         if (masterTracker.length === 0) {
@@ -2567,107 +2593,6 @@
         link.click();
         document.body.removeChild(link);
     }
-    
-    // Admin Data Backup & Restore
-    function showTrackerStatus(message, isError = false) {
-        const statusEl = document.getElementById('tracker-status');
-        if (statusEl) {
-            statusEl.textContent = message;
-            statusEl.className = isError 
-                ? 'mt-2 font-semibold h-6 text-red-600' 
-                : 'mt-2 font-semibold h-6 text-green-600';
-            setTimeout(() => {
-                statusEl.textContent = '';
-            }, 5000);
-        }
-    }
-
-    function backupData() {
-        const dataToBackup = {};
-        let hasData = false;
-        for (let i = 0; i < localStorage.length; i++) {
-            const key = localStorage.key(i);
-            if (key.startsWith('scoring_')) {
-                dataToBackup[key] = localStorage.getItem(key);
-                hasData = true;
-            }
-        }
-
-        if (!hasData) {
-            showTrackerStatus('No scoring data found to back up.', true);
-            return;
-        }
-
-        const jsonString = JSON.stringify(dataToBackup, null, 2);
-        const blob = new Blob([jsonString], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        const timestamp = new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-');
-        link.download = `scoring-backup-${timestamp}.json`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(url);
-        showTrackerStatus('Backup file downloaded successfully.');
-    }
-
-    function triggerRestore() {
-        // The user is warned about overwriting data in the UI text.
-        document.getElementById('restore-file-input').click();
-    }
-
-    function restoreData(event) {
-        const file = event.target.files[0];
-        if (!file) return;
-
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            try {
-                const data = JSON.parse(e.target.result);
-                
-                // Clear existing scoring data before restoring
-                const keysToRemove = [];
-                for (let i = 0; i < localStorage.length; i++) {
-                    const key = localStorage.key(i);
-                    if (key.startsWith('scoring_')) {
-                        keysToRemove.push(key);
-                    }
-                }
-                keysToRemove.forEach(key => localStorage.removeItem(key));
-
-                let restoredCount = 0;
-                for (const key in data) {
-                    if (Object.prototype.hasOwnProperty.call(data, key) && key.startsWith('scoring_')) {
-                        localStorage.setItem(key, data[key]);
-                        restoredCount++;
-                    }
-                }
-                
-                showTrackerStatus(`Restore complete: ${restoredCount} records loaded. Refreshing views...`);
-                
-                // Refresh views to show restored data
-                setTimeout(() => {
-                    renderMasterTrackerView();
-                    if (document.getElementById('page-admin-dashboard').style.display === 'block') {
-                        renderAdminDashboard(document.getElementById('admin-area-filter').value);
-                    }
-                    if (document.getElementById('page-scoring').style.display === 'block' && currentMember) {
-                        renderTaskList();
-                    }
-                }, 500);
-
-            } catch (error) {
-                showTrackerStatus('Error: Invalid backup file provided.', true);
-                console.error('Restore error:', error);
-            } finally {
-                // Allows re-uploading the same file if needed
-                event.target.value = null; 
-            }
-        };
-        reader.readAsText(file);
-    }
-
 
     // ----------------
     // INITIALIZATION

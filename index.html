@@ -1761,65 +1761,75 @@
             { name: "Bailey Richardson", area: "Admin" } // Admin User
         ],
         CRITERIA_TEMPLATE: [
-            { 
-                id: "priority", name: "Alignment with Local Priorities", 
-                guidance: "How well does the project align with the identified priorities for the area?", 
+            {
+                id: "overview_objectives",
+                name: "Project Overview & SMART Objectives",
+                guidance: "Assesses the clarity and quality of the project's overview and objectives.",
                 weight: 10,
-                details: "<b>0:</b> No alignment with local priorities.<br><b>1:</b> Weak or unclear link to local priorities.<br><b>2:</b> Clear alignment with one or more local priorities.<br><b>3:</b> Strong, direct alignment with a top local priority."
-            },
-            { 
-                id: "impact", name: "Community Impact & Benefit", 
-                guidance: "How significant is the project's potential benefit to the community?", 
-                weight: 10,
-                details: "<b>0:</b> No clear community benefit.<br><b>1:</b> Benefits a small, specific group of people.<br><b>2:</b> Benefits a significant portion of the community.<br><b>3:</b> Wide-reaching, significant, and lasting benefits for the community."
-            },
-            { 
-                id: "deliverability", name: "Deliverability & Value for Money", 
-                guidance: "How realistic is the project plan and budget? Does it represent good value?", 
-                weight: 10,
-                details: "<b>0:</b> Unrealistic plan or budget; poor value for money.<br><b>1:</b> Some concerns about the plan's feasibility or budget justification.<br><b>2:</b> Realistic plan and budget that represents reasonable value.<br><b>3:</b> Excellent, well-thought-out plan and a well-justified budget offering exceptional value."
-            },
-            { 
-                id: "engagement", name: "Community Engagement & Collaboration", 
-                guidance: "How well does the project involve the community and collaborate with others?", 
-                weight: 10,
-                details: "<b>0:</b> No evidence of community engagement or collaboration.<br><b>1:</b> Some consultation with the community or partners mentioned.<br><b>2:</b> Actively involves community members in the project's design or delivery.<br><b>3:</b> Strong partnerships and co-design with the community are central to the project."
-            },
-            { 
-                id: "sustainability", name: "Sustainability & Legacy", 
-                guidance: "Does the project have a plan for continuation or lasting impact?", 
-                weight: 10,
-                details: "<b>0:</b> No legacy or plan for sustainability.<br><b>1:</b> The project is short-term with no clear lasting impact.<br><b>2:</b> The project has the potential for lasting impact or continuation.<br><b>3:</b> The project has a clear and realistic plan for continuation and lasting community benefit."
+                details: "<b>0:</b> No clear overview or objectives; lacks purpose or beneficiaries.<br><b>1:</b> Basic overview with vague objectives; generic language.<br><b>2:</b> Clear overview with mostly SMART objectives; minor gaps.<br><b>3:</b> Concise, compelling overview; fully SMART objectives and clear beneficiaries."
             },
             {
-                id: "marmot", name: "Alignment with Marmot Principles",
-                guidance: "How effectively does the project address health inequalities?",
+                id: "local_priorities",
+                name: "Alignment with Local Priorities",
+                guidance: "How well does the project connect to the identified needs and priorities of the local area?",
                 weight: 10,
-                details: "<b>0:</b> No alignment.<br><b>1:</b> Weak link to principles.<br><b>2:</b> Clearly addresses one or more principles.<br><b>3:</b> Strong alignment with practical examples."
+                details: "<b>0:</b> No explicit link to local priorities; off-scope.<br><b>1:</b> Mentions a relevant priority but connection is weak or generic.<br><b>2:</b> Good linkage to one or more priorities with some specific examples.<br><b>3:</b> Direct, specific alignment to the top local priorities with strong evidence."
             },
             {
-                id: "wfg", name: "Well-being of Future Generations (Wales) Act",
-                guidance: "How does the project contribute to the well-being goals for Wales?",
+                id: "community_benefit",
+                name: "Community Benefit & Outcomes",
+                guidance: "Evaluates the project's potential benefits and the clarity of its short and long-term outcomes.",
                 weight: 10,
-                details: "<b>0:</b> No contribution.<br><b>1:</b> Weak link to goals.<br><b>2:</b> Clearly contributes to one or more goals.<br><b>3:</b> Strong alignment with practical examples."
+                details: "<b>0:</b> Benefits not described or unclear; no outcomes.<br><b>1:</b> Benefits noted but outcomes vague; little distinction between short/long-term.<br><b>2:</b> Clear benefits and plausible outcomes; some indicators described.<br><b>3:</b> Compelling benefits with specific short and long-term outcomes and simple indicators."
             },
             {
-                id: "innovation", name: "Innovation & Creativity",
-                guidance: "Does the project offer a new or creative solution to a community issue?",
+                id: "activities_milestones",
+                name: "Activities, Milestones & Delivery Responsibilities",
+                guidance: "Assesses the coherence and feasibility of the project's activity plan, milestones, and role allocation.",
                 weight: 10,
-                details: "<b>0:</b> Conventional approach.<br><b>1:</b> Some new elements.<br><b>2:</b> Creative and innovative approach.<br><b>3:</b> Highly original and inspiring solution."
+                details: "<b>0:</b> Activities absent or not credible; no milestones; roles unclear.<br><b>1:</b> Some activities listed; milestones or responsibilities partly defined.<br><b>2:</b> Coherent activities with milestones and named roles; feasible plan.<br><b>3:</b> Comprehensive activity plan with realistic milestones and clear owners; delivery-ready."
             },
             {
-                id: "inclusivity", name: "Inclusivity & Equality",
-                guidance: "How well does the project include and benefit diverse groups?",
+                id: "timeline_realism",
+                name: "Timeline & Scheduling Realism",
+                guidance: "How realistic and well-structured is the project's timeline?",
                 weight: 10,
-                details: "<b>0:</b> Not inclusive.<br><b>1:</b> Limited reach to diverse groups.<br><b>2:</b> Accessible to most community groups.<br><b>3:</b> Proactively inclusive and removes barriers to participation."
+                details: "<b>0:</b> No timeline or dates unrealistic.<br><b>1:</b> Basic dates provided; feasibility uncertain.<br><b>2:</b> Realistic start/end/duration aligned to activities.<br><b>3:</b> Robust timeline with sequencing that clearly supports delivery and review points."
             },
             {
-                id: "evidence", name: "Evidence of Need",
-                guidance: "Is there clear evidence that this project is needed in the community?",
+                id: "collaborations_partnerships",
+                name: "Collaborations & Partnerships",
+                guidance: "Evaluates the strength and clarity of partnerships that enhance the project's reach and delivery.",
                 weight: 10,
-                details: "<b>0:</b> No evidence of need provided.<br><b>1:</b> Anecdotal evidence of need.<br><b>2:</b> Supported by some local data or consultation.<br><b>3:</b> Strong evidence from community consultation and data."
+                details: "<b>0:</b> No partners identified; opportunities not explored.<br><b>1:</b> Potential partners named but roles vague or tentative.<br><b>2:</b> Relevant partners named with defined roles and mutual benefits.<br><b>3:</b> Strong partnership model (centres/groups named) clearly strengthening reach and delivery."
+            },
+            {
+                id: "risk_management",
+                name: "Risk Management & Feasibility",
+                guidance: "Assesses the identification of key risks and the credibility of the proposed mitigation strategies.",
+                weight: 10,
+                details: "<b>0:</b> No risks identified; feasibility not addressed.<br><b>1:</b> Some risks listed; mitigations generic or partial.<br><b>2:</b> Key risks identified with credible mitigations.<br><b>3:</b> Comprehensive risk register with proportionate mitigations and clear owners."
+            },
+            {
+                id: "budget_value",
+                name: "Budget Transparency & Value for Money",
+                guidance: "How transparent, justified, and proportionate is the project's budget?",
+                weight: 10,
+                details: "<b>0:</b> Insufficient or unclear costs; poor justification.<br><b>1:</b> Headline costs given; some justification but gaps remain.<br><b>2:</b> Transparent line-by-line costs with reasonable assumptions.<br><b>3:</b> Fully justified budget (rates × hours/quotes), lean and proportionate to outcomes."
+            },
+            {
+                id: "cross_area_specificity",
+                name: "Cross-Area Specificity & Venues (if applicable)",
+                guidance: "For cross-area projects, assesses the clarity of the budget and venue details for each area.",
+                weight: 10,
+                details: "<b>0:</b> No area split or venues named where cross-area is claimed.<br><b>1:</b> Partial split: venue(s) or local costs unclear.<br><b>2:</b> Clear area split and notes; key local delivery costs included.<br><b>3:</b> Complete area split with named venues/rooms and reconciles to main budget."
+            },
+            {
+                id: "marmot_wfg",
+                name: "Alignment with Marmot Principles & WFG Goals",
+                guidance: "How well does the project demonstrate practical alignment with these principles and goals?",
+                weight: 10,
+                details: "<b>0:</b> No justification beyond ticks or irrelevant claims.<br><b>1:</b> Basic justifications; generic statements.<br><b>2:</b> Specific, credible examples for selected principles/goals.<br><b>3:</b> Strong, practical examples tying activities to selected principles/goals and outcomes."
             }
         ]
     };
